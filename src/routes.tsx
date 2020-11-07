@@ -1,23 +1,71 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-
-import Menu from "./components/menu";
-import Landing from "./components/landing";
-import Omas from "./components/omaList";
+import Carer from "./components/carerList";
+import RequestList from "./components/requestList";
+import Splash from "./components/splash";
+import Choice from "./components/choice";
+import ChoiceReceive from "./components/choiceNeedHelp";
 
 const Routes: React.FC = () => (
   <div>
-    <Menu />
     <Switch>
       <Route exact path="/"
         render={() => (
-            <Landing />
+            <Choice />
         )}
       />
       <Route
-        exact path="/omas"
+        exact path="/carers/:id"
         render={() => (
-            <Omas />
+            <Carer />
+        )}
+      />
+      <Route
+        exact path="/carers"
+        render={() => (
+            <Carer />
+        )}
+      />
+      <Route
+        exact path="/requests/:id"
+        render={() => (
+            <Carer />
+        )}
+      />
+      <Route
+        exact path="/requests"
+        render={() => (
+            <Carer />
+        )}
+      />
+      <Route
+        exact path="/splash"
+        render={() => (
+            <Splash />
+        )}
+      />
+      <Route
+        exact path="/give"
+        render={() => (
+            <RequestList />
+        )}
+      />
+      <Route
+        exact path="/receive"
+        render={() => (
+            <ChoiceReceive />
+        )}
+      />
+      <Route
+        exact path="/receive/new"
+        render={() => (
+            <ChoiceReceive />
+        )}
+      />
+      <Route
+        exact path="/receive/list"
+        render={() => (
+            <Carer />
         )}
       />
     </Switch>

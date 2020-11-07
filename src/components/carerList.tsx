@@ -1,27 +1,38 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import OmaCard from "./omaCard";
+import CarerCard from "./carerCard";
 import { ApplicationState } from "../store";
-import { Oma } from "../store/oma/types";
-import { fetchRequest } from "../store/oma/action";
+import Carer from "../models/Carers";
+import { fetchRequest } from "../store/carers/action";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
 
 const Container = styled.div`
   width: 100%;
-  max-width: 1170px;
+  max-width: 340px;
   margin: auto;
 `;
 
-const OmaListing = styled.div`
+const Header = styled.div`
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #000000;
+  padding: 20px;
+`;
+
+const CarerListing = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
 
 interface PropsFromState {
   loading: boolean;
-  data: Oma[];
+  data: Carer[];
   errors?: string;
 }
 
@@ -31,7 +42,7 @@ interface propsFromDispatch {
 
 type AllProps = PropsFromState & propsFromDispatch;
 
-const OmaList: React.FC<AllProps> = ({
+const CarerList: React.FC<AllProps> = ({
   loading,
   errors,
   data,
@@ -43,20 +54,20 @@ const OmaList: React.FC<AllProps> = ({
 
   return (
     <Container>
-      {/* <Navbar /> */}
-      <OmaListing>
+      <Header>Care providers</Header>
+      <CarerListing>
         {data.map(item => {
-          return <OmaCard oma={item} />;
+          return <CarerCard carer={item} />;
         })}
-      </OmaListing>
+      </CarerListing>
     </Container>
   );
 };
 
-const mapStateToProps = ({ Oma }: ApplicationState) => ({
-  loading: Oma.loading,
-  errors: Oma.errors,
-  data: Oma.data
+const mapStateToProps = ({ carers }: ApplicationState) => ({
+  loading: carers.loading,
+  errors: carers.errors,
+  data: carers.data
 });
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AnyAction>) => {
@@ -67,4 +78,4 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AnyAction>) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OmaList);
+export default connect(mapStateToProps, mapDispatchToProps)(CarerList);

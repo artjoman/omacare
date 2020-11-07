@@ -1,26 +1,30 @@
-import { OmaActionTypes } from "./types";
+import { RequestActionTypes, RequestState } from "./types";
+import OmaRequest from "../../models/OmaRequest";
 
 import { ActionCreator, Action, Dispatch } from "redux";
 import { ThunkAction } from "redux-thunk";
+import OmaRequests from "../../mockdataRequest";
 
 import { ApplicationState } from "../index";
-import Oma from "../../mockdata";
+
 
 export type AppThunk = ActionCreator<
   ThunkAction<void, ApplicationState, null, Action<string>>
 >;
 
-export const fetchRequest: AppThunk = () => {
+export const fetchRequestRequest: AppThunk = () => {
   return (dispatch: Dispatch): Action => {
     try {
       return dispatch({
-        type: OmaActionTypes.FETCH_SUCCESS,
-        payload: Oma
+        type: RequestActionTypes.FETCH_SUCCESS,
+        payload: OmaRequests
       });
     } catch (e) {
       return dispatch({
-        type: OmaActionTypes.FETCH_ERROR
+        type: RequestActionTypes.FETCH_ERROR
       });
     }
   };
 };
+
+

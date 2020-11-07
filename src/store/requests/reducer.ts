@@ -1,22 +1,22 @@
 import { Reducer } from "redux";
-import { OmaActionTypes, OmaState } from "./types";
+import { RequestActionTypes, RequestState } from "./types";
 
-export const initialState: OmaState = {
+export const initialState: RequestState = {
   data: [],
   errors: undefined,
   loading: false
 };
 
-const reducer: Reducer<OmaState> = (state = initialState, action) => {
+const reducer: Reducer<RequestState> = (state = initialState, action) => {
   switch (action.type) {
-    case OmaActionTypes.FETCH_REQUEST: {
+    case RequestActionTypes.FETCH_REQUEST: {
       return { ...state, loading: true };
     }
-    case OmaActionTypes.FETCH_SUCCESS: {
+    case RequestActionTypes.FETCH_SUCCESS: {
       console.log("action payload", action.payload);
       return { ...state, loading: false, data: action.payload };
     }
-    case OmaActionTypes.FETCH_ERROR: {
+    case RequestActionTypes.FETCH_ERROR: {
       return { ...state, loading: false, errors: action.payload };
     }
     default: {
@@ -25,4 +25,4 @@ const reducer: Reducer<OmaState> = (state = initialState, action) => {
   }
 };
 
-export { reducer as OmaReducer };
+export { reducer as RequestReducer };
