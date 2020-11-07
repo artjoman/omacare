@@ -8,6 +8,8 @@ import Carer from "./components/carerList";
 import OmaDetails from "./components/omaDetails";
 import CarerDetails from "./components/carerDetails";
 import Splash from "./components/splash";
+import Choice from "./components/choice";
+import ChoiceReceive from "./components/choiceNeedHelp";
 
 const Routes: React.FC = () => (
   <div>
@@ -46,6 +48,36 @@ const Routes: React.FC = () => (
         exact path="/splash"
         render={() => (
             <Splash />
+        )}
+      />
+      <Route
+        exact path="/choice"
+        render={() => (
+            <Choice />
+        )}
+      />
+      <Route
+        exact path="/give"
+        render={() => (
+            <ChoiceReceive />
+        )}
+      />
+      <Route
+        exact path="/receive"
+        render={() => (
+            <ChoiceReceive />
+        )}
+      />
+      <Route
+        exact path="/receive/new"
+        render={() => (
+            <ChoiceReceive />
+        )}
+      />
+      <Route
+        exact path="/receive/list"
+        render={() => (
+            <ChoiceReceive />
         )}
       />
     </Switch>
