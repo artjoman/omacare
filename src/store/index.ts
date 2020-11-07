@@ -3,7 +3,6 @@ import { connectRouter } from "connected-react-router";
 
 import { History } from "history";
 
-// import OmaSaga from "./Oma/sagas";
 import { OmaReducer } from "./oma/reducer";
 import { OmaState } from "./oma/types";
 
@@ -11,7 +10,6 @@ import { OmaState } from "./oma/types";
 import { CarerReducer } from "./carers/reducer";
 import { CarerState } from "./carers/types";
 
-// import cartSaga from "./cart/sagas";
 import { cartReducer } from "./booking/reducer";
 import { cartState } from "./booking/types";
 import { RouterState } from "connected-react-router";
@@ -26,7 +24,7 @@ export interface ApplicationState {
 export const createRootReducer = (history: History) =>
     combineReducers({
         cart: cartReducer,
-        carer: CarerReducer,
         Oma: OmaReducer,
+        Carer: CarerReducer,
         router: connectRouter(history)
     });
