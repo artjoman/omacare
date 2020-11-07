@@ -8,6 +8,6 @@ export default interface OmaRequest {
   minPrice: number;
   description: string;
   services: Service[];
-  gender?: Gender;
-  ageGroup?: AgeGroup;
+  gender: Gender;
+  ageGroup: AgeGroup;
 }
