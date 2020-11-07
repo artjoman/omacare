@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
+import backgroundImg from "../assets/background.svg";
 
 const Container = styled.div`
   width: 100%;
@@ -11,7 +12,6 @@ const Container = styled.div`
   margin: auto;
 `;
 
-
 const HeaderContainer = styled.div`
   width: 100%;
   align-content: center;
@@ -19,10 +19,21 @@ const HeaderContainer = styled.div`
   padding: 10px;
   text-align: center;
   margin: auto;
-  background-image: url("/images/backgound.svg");
+  background-image: url(${backgroundImg});
+  background-repeat: no-repeat;
+  background-position: center top; 
 `;
 
-const Header = styled.img`
+const Logo = styled.img`
+  max-width: 75px;
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  object-position: center;
+  padding-top: 50px;
+`;
+
+const Helper = styled.img`
   max-width: 300px;
   width: 70%;
   height: 70%;
@@ -86,7 +97,12 @@ const Choice = (props: any) => {
     return (
         <Container>
             <HeaderContainer>
-                <Header src="/images/logo.png" />
+            <Container>
+                <Logo src="/images/logo.svg" />
+                </Container>
+                <Container>
+                <Helper src="/images/people.svg" />
+                </Container>
             </HeaderContainer>
             <Container>
                 <Link to="/receive">

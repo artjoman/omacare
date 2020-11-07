@@ -13,7 +13,6 @@ import ChoiceReceive from "./components/choiceNeedHelp";
 
 const Routes: React.FC = () => (
   <div>
-    <Menu />
     <Switch>
       <Route exact path="/"
         render={() => (

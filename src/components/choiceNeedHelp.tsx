@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
+import backgroundImg from "../assets/background.svg";
 
 const Container = styled.div`
   width: 100%;
@@ -11,14 +12,34 @@ const Container = styled.div`
   margin: auto;
 `;
 
-const Header = styled.img`
-  max-width: 300px;
+const HeaderContainer = styled.div`
+  width: 100%;
+  align-content: center;
+  max-width: 1170px;
+  padding: 10px;
+  text-align: center;
+  margin: auto;
+  background-image: url(${backgroundImg});
+  background-repeat: no-repeat;
+  background-position: center top; 
+`;
+
+const Logo = styled.img`
+  max-width: 75px;
   width: 70%;
   height: 70%;
   object-fit: contain;
   object-position: center;
+  padding-top: 50px;
 `;
 
+const Helper = styled.img`
+  max-width: 300px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+`;
 
 const ButtonDark = styled.button`
   left: 0px;
@@ -90,9 +111,14 @@ const LinkHome = styled.button`
 const ChoiceReceive = (props: any) => {
   return (
     <Container>
-      <Container>
-        <Header src="/images/logo.png" />
-      </Container>
+      <HeaderContainer>
+        <Container>
+          <Logo src="/images/logo.svg" />
+        </Container>
+        <Container>
+          <Helper src="/images/group.svg" />
+        </Container>
+      </HeaderContainer>
       <Container>
         <Link to="/">
           <ButtonDark>New request</ButtonDark>
