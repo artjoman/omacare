@@ -5,6 +5,8 @@ import Menu from "./components/menu";
 import Landing from "./components/landing";
 import Omas from "./components/omaList";
 import Carer from "./components/carerList";
+import OmaDetails from "./components/omaDetails";
+import CarerDetails from "./components/carerDetails";
 
 const Routes: React.FC = () => (
   <div>
@@ -18,12 +20,12 @@ const Routes: React.FC = () => (
       <Route
         exact path="/carers/:id"
         render={() => (
-            <Omas />
+            <Carer />
         )}
       />
       <Route
         exact path="/omas/:id"
-        render={() => (
+        render={(id) => (
             <Omas />
         )}
       />

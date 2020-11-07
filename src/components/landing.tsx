@@ -11,13 +11,19 @@ import { AnyAction } from "redux";
 
 const Container = styled.div`
   width: 100%;
+  align-content: center;
   max-width: 1170px;
+  padding: 10px;
+  text-align: center;
   margin: auto;
 `;
 
-const ProductListItems = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+const Logo = styled.img`
+  max-width: 300px;
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  object-position: center;
 `;
 
 interface PropsFromState {
@@ -44,7 +50,7 @@ const Landing: React.FC<AllProps> = ({
 
   return (
     <Container>
-      {/* <CAROUSEL? /> */}
+      <Logo src="/images/logo.png" />
     </Container>
   );
 };

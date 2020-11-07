@@ -8,7 +8,6 @@ import { AnyAction } from "redux";
 import { Link } from "react-router-dom";
 
 const ProductContainer = styled.div`
-  background-color: #eeeeee;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
   margin: 15px;
