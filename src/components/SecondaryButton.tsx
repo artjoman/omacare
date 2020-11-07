@@ -7,8 +7,8 @@ interface Props {
 }
 
 const stylesEnabled = {
-  backgroundColor: "#F31D4B",
-  color: "#FFFFFF",
+  backgroundColor: "#FFEAEA",
+  color: "#F31D4B",
   borderWidth: "0",
   borderStyle: "none",
   borderColor: "transparent",
@@ -20,7 +20,7 @@ const stylesEnabled = {
 }
 
 const stylesDisabled = {
-  backgroundColor: "#F1F1F1",
+  backgroundColor: "#FFEAEA",
   color: "#4F4F4F",
   borderWidth: "0",
   borderStyle: "none",
@@ -30,12 +30,13 @@ const stylesDisabled = {
   display: "inline-block",
   fontSize: "16px",
   borderRadius: "6px",
+  opacity: "0.8"
 }
 
-const MainButton: React.FC<Props> = ({ labelText, clickHandler, buttonEnabled }) => {
+const SecondaryButton: React.FC<Props> = ({ labelText, clickHandler, buttonEnabled }) => {
   return (
     <button className="main-btn" disabled={!buttonEnabled} style={buttonEnabled ? stylesEnabled : stylesDisabled} onClick={clickHandler}>{labelText}</button>
   );
 };
 
-export default MainButton;
+export default SecondaryButton;
