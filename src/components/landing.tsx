@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-
 import OmaList from "./omaCard";
 import { ApplicationState } from "../store";
 import { Oma } from "../store/oma/types";
@@ -52,8 +51,6 @@ const ButtonDark = styled.button`
   color: #F2F2F2;
 `;
 
-
-
 const ButtonLight = styled.button`
   left: 0px;
   right: 0px;
@@ -103,7 +100,6 @@ const ServiceDark = styled.button`
   letter-spacing: 0.75px;
   color: #EB5757;
 `;
-
 
 const ServiceLight = styled.button`
   left: 0px;
