@@ -7,6 +7,7 @@ import Omas from "./components/omaList";
 import Carer from "./components/carerList";
 import OmaDetails from "./components/omaDetails";
 import CarerDetails from "./components/carerDetails";
+import Splash from "./components/splash";
 
 const Routes: React.FC = () => (
   <div>
@@ -39,6 +40,12 @@ const Routes: React.FC = () => (
         exact path="/carers"
         render={() => (
             <Carer />
+        )}
+      />
+      <Route
+        exact path="/splash"
+        render={() => (
+            <Splash />
         )}
       />
     </Switch>
