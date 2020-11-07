@@ -68,6 +68,9 @@ const Menu: React.FC<AllProps> = ({ data, loading, errors, children }) => {
           <Link to="/omas">Omas</Link>
           </NavMenu>
           <NavMenu>
+          <Link to="/carers">Carers</Link>
+          </NavMenu>
+          <NavMenu>
           <Link to="/about">How it works</Link>
           </NavMenu>
           <NavMenu>
