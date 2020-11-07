@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import Carer from "../models/Carers";
+import OmaRequest from "../models/OmaRequest";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
 import { Link, RouteComponentProps } from "react-router-dom";
@@ -41,7 +41,7 @@ const CarerDescriptionDiv = styled.div`
 
 interface PropsFromState {
     loading: boolean;
-    data: Carer;
+    data: OmaRequest;
     errors?: string;
   }
   

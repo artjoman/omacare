@@ -3,23 +3,21 @@ import OmaRequest from "../../models/OmaRequest";
 
 import { ActionCreator, Action, Dispatch } from "redux";
 import { ThunkAction } from "redux-thunk";
-import Requests from "../../mockdata";
+import OmaRequests from "../../mockdataRequest";
 
 import { ApplicationState } from "../index";
 
-export type AppThunk = ThunkAction<
-  void,
-  ApplicationState,
-  null,
-  Action<string>
+
+export type AppThunk = ActionCreator<
+  ThunkAction<void, ApplicationState, null, Action<string>>
 >;
 
 export const fetchRequestRequest: AppThunk = () => {
-  return (dispatch: Dispatch, state: ApplicationState): Action => {
+  return (dispatch: Dispatch): Action => {
     try {
       return dispatch({
         type: RequestActionTypes.FETCH_SUCCESS,
-        payload: Requests
+        payload: OmaRequests
       });
     } catch (e) {
       return dispatch({
@@ -28,4 +26,5 @@ export const fetchRequestRequest: AppThunk = () => {
     }
   };
 };
+
 

@@ -4,7 +4,7 @@ import { ActionCreator, Action, Dispatch } from "redux";
 import { ThunkAction } from "redux-thunk";
 
 import { ApplicationState } from "../index";
-import Carer from "../../mockdataCarer";
+import Carers from "../../mockdataCarer";
 
 export type AppThunk = ActionCreator<
   ThunkAction<void, ApplicationState, null, Action<string>>
@@ -15,7 +15,7 @@ export const fetchRequest: AppThunk = () => {
     try {
       return dispatch({
         type: CarerActionTypes.FETCH_SUCCESS,
-        payload: Carer
+        payload: Carers
       });
     } catch (e) {
       return dispatch({

@@ -1,11 +1,4 @@
-export interface Carer {
-  id: string;
-  name: string;
-  price: string;
-  image: string;
-  description: string;
-  currentCarer: number;
-}
+import Carer from "../../models/Carers";
 
 export enum CarerActionTypes {
   FETCH_REQUEST = "@@Oma/FETCH_REQUEST",

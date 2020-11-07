@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import Carer from "../models/Carers";
+import OmaRequests from "../models/OmaRequest";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
 import { Link } from "react-router-dom";
@@ -71,7 +71,7 @@ const CarerDescription = styled.div`
 `;
 
 interface propsFromComponent {
-  carer: Carer;
+  request: OmaRequests;
 }
 
 interface propsFromDispatch {
@@ -79,17 +79,17 @@ interface propsFromDispatch {
 
 type Props = propsFromComponent & propsFromDispatch;
 
-const CarerCard: React.FC<Props> = ({ carer }) => {
+const CarerCard: React.FC<Props> = ({ request }) => {
   return (
-    <Link to={"/carers/" + carer.id}>
+    <Link to={"/carers/" + request.id}>
       <CarerContainer>
         <CarerImageCell>
-          <CarerImage src={'/images/' + carer.image} />
+          <CarerImage src={'/images/' + request.image} />
         </CarerImageCell>
         <CarerContentCell>
-          <CarerHeader>{carer.title}</CarerHeader>
-          <CarerPrice>€ {carer.price}</CarerPrice>
-          <CarerDescription>{carer.description}</CarerDescription>
+          <CarerHeader>{request.title}</CarerHeader>
+          <CarerPrice>€ {request.minPrice} - {request.maxPrice}</CarerPrice>
+          <CarerDescription>{request.description}</CarerDescription>
         </CarerContentCell>
       </CarerContainer>
     </Link>

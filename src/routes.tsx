@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Carer from "./components/carerList";
-import CarerDetails from "./components/carerDetails";
+import RequestList from "./components/requestList";
 import Splash from "./components/splash";
 import Choice from "./components/choice";
 import ChoiceReceive from "./components/choiceNeedHelp";
@@ -47,7 +47,7 @@ const Routes: React.FC = () => (
       <Route
         exact path="/give"
         render={() => (
-            <ChoiceReceive />
+            <RequestList />
         )}
       />
       <Route
@@ -65,7 +65,7 @@ const Routes: React.FC = () => (
       <Route
         exact path="/receive/list"
         render={() => (
-            <ChoiceReceive />
+            <Carer />
         )}
       />
     </Switch>

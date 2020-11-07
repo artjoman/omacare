@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import CarerCard from "./carerCard";
+import CarerCard from "./requestCard";
 import { ApplicationState } from "../store";
-import Carer from "../models/Carers";
-import { fetchRequest } from "../store/carers/action";
+import Requests from "../models/OmaRequest";
+import { fetchRequestRequest } from "../store/requests/action";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
+import OmaRequest from "../models/OmaRequest";
 
 const Container = styled.div`
   width: 100%;
@@ -32,50 +33,50 @@ const CarerListing = styled.div`
 
 interface PropsFromState {
   loading: boolean;
-  data: Carer[];
+  data: OmaRequest[];
   errors?: string;
 }
 
 interface propsFromDispatch {
-  fetchRequest: () => any;
+  fetchRequestRequest: () => any;
 }
 
 type AllProps = PropsFromState & propsFromDispatch;
 
-const CarerList: React.FC<AllProps> = ({
+const RequestList: React.FC<AllProps> = ({
   loading,
   errors,
   data,
-  fetchRequest
+  fetchRequestRequest
 }) => {
   useEffect(() => {
-    fetchRequest();
+    fetchRequestRequest();
   }, []);
 
   return (
     <Container>
-      <Header>Care providers</Header>
+      <Header>Care requests</Header>
       <CarerListing>
         {data.map(item => {
-          return <CarerCard carer={item} />;
+          return <CarerCard request={item} />;
         })}
       </CarerListing>
     </Container>
   );
 };
 
-const mapStateToProps = ({ carers }: ApplicationState) => ({
-  loading: carers.loading,
-  errors: carers.errors,
-  data: carers.data
+const mapStateToProps = ({ requests }: ApplicationState) => ({
+  loading: requests.loading,
+  errors: requests.errors,
+  data: requests.data
 });
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AnyAction>) => {
   return {
-    fetchRequest: () => {
-      dispatch(fetchRequest());
+    fetchRequestRequest: () => {
+      dispatch(fetchRequestRequest());
     }
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CarerList);
+export default connect(mapStateToProps, mapDispatchToProps)(RequestList);

@@ -120,12 +120,12 @@ const ChoiceReceive = (props: any) => {
         </Container>
       </HeaderContainer>
       <Container>
-        <Link to="/">
+        <Link to="/receive/new">
           <ButtonDark>New request</ButtonDark>
         </Link>
       </Container>
       <Container>
-        <Link to="/">
+        <Link to="/receive/list">
           <ButtonLight>My request list</ButtonLight>
         </Link>
       </Container>
