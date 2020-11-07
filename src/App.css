@@ -28,6 +28,17 @@
   color: #61dafb;
 }
 
+.MuiCheckbox-colorPrimary.Mui-checked {
+  color: #F31D4B !important;
+}
+.MuiFormControlLabel-root {
+  margin-left: 0 !important;
+}
+
+.activeCheckboxBackground {
+  background: #FFEAEA !important;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(360deg);
