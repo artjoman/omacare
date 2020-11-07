@@ -11,6 +11,17 @@ const Container = styled.div`
   margin: auto;
 `;
 
+
+const HeaderContainer = styled.div`
+  width: 100%;
+  align-content: center;
+  max-width: 1170px;
+  padding: 10px;
+  text-align: center;
+  margin: auto;
+  background-image: url("/images/backgound.svg");
+`;
+
 const Header = styled.img`
   max-width: 300px;
   width: 70%;
@@ -18,7 +29,6 @@ const Header = styled.img`
   object-fit: contain;
   object-position: center;
 `;
-
 
 const ButtonDark = styled.button`
   left: 0px;
@@ -75,9 +85,9 @@ const ButtonLight = styled.button`
 const Choice = (props: any) => {
     return (
         <Container>
-            <Container>
+            <HeaderContainer>
                 <Header src="/images/logo.png" />
-            </Container>
+            </HeaderContainer>
             <Container>
                 <Link to="/receive">
                 <ButtonDark>I need assistance</ButtonDark>
