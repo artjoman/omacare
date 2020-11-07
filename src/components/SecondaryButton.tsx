@@ -34,7 +34,6 @@ const stylesDisabled = {
 }
 
 const SecondaryButton: React.FC<Props> = ({ labelText, clickHandler, buttonEnabled }) => {
-
   return (
     <button className="main-btn" disabled={!buttonEnabled} style={buttonEnabled ? stylesEnabled : stylesDisabled} onClick={clickHandler}>{labelText}</button>
   );
