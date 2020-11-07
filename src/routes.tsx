@@ -1,11 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-
-import Menu from "./components/menu";
-import Landing from "./components/landing";
-import Omas from "./components/omaList";
 import Carer from "./components/carerList";
-import OmaDetails from "./components/omaDetails";
 import CarerDetails from "./components/carerDetails";
 import Splash from "./components/splash";
 import Choice from "./components/choice";
@@ -16,7 +11,7 @@ const Routes: React.FC = () => (
     <Switch>
       <Route exact path="/"
         render={() => (
-            <Landing />
+            <Choice />
         )}
       />
       <Route
@@ -26,19 +21,19 @@ const Routes: React.FC = () => (
         )}
       />
       <Route
-        exact path="/omas/:id"
-        render={(id) => (
-            <Omas />
-        )}
-      />
-      <Route
-        exact path="/omas"
-        render={() => (
-            <Omas />
-        )}
-      />
-      <Route
         exact path="/carers"
+        render={() => (
+            <Carer />
+        )}
+      />
+      <Route
+        exact path="/requests/:id"
+        render={() => (
+            <Carer />
+        )}
+      />
+      <Route
+        exact path="/requests"
         render={() => (
             <Carer />
         )}
@@ -47,12 +42,6 @@ const Routes: React.FC = () => (
         exact path="/splash"
         render={() => (
             <Splash />
-        )}
-      />
-      <Route
-        exact path="/choice"
-        render={() => (
-            <Choice />
         )}
       />
       <Route

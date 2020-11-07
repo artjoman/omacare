@@ -53,10 +53,10 @@ const CarerList: React.FC<AllProps> = ({
   );
 };
 
-const mapStateToProps = ({ Carer }: ApplicationState) => ({
-  loading: Carer.loading,
-  errors: Carer.errors,
-  data: Carer.data
+const mapStateToProps = ({ carers }: ApplicationState) => ({
+  loading: carers.loading,
+  errors: carers.errors,
+  data: carers.data
 });
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AnyAction>) => {
