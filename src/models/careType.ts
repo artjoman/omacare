@@ -1,1 +1,0 @@
-export type CareType = 'Cooking' | 'Medical' | 'Cleaning' | 'Shopping';

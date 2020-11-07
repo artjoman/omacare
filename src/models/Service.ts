@@ -1,0 +1,1 @@
+export type Service = 'Nanny' | 'Preparing meals' | 'Sitter for elder people' | 'Light housework' | 'Grocery shopping' | 'Administrative tasks';
