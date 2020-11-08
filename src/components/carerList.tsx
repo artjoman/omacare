@@ -40,10 +40,11 @@ interface PropsFromState {
   loading: boolean;
   data: Carer[];
   errors?: string;
+  id?: string;
 }
 
 interface propsFromDispatch {
-  fetchRequest: () => any;
+  fetchRequest: (id: string) => any;
 }
 
 function useQuery() {
@@ -58,12 +59,13 @@ const CarerList: React.FC<AllProps> = ({
   data,
   fetchRequest
 }) => {
+
+  const { id } = useParams<ParamTypes>();
   useEffect(() => {
-    fetchRequest();
+    fetchRequest(id);
   }, []);
 
   const query = useQuery();
-  const { id } = useParams<ParamTypes>();
   return (
     <Container>
       <Header>Care providers</Header>
@@ -79,11 +81,13 @@ const CarerList: React.FC<AllProps> = ({
   );
 };
 
+// const { id } = useParams<ParamTypes>();
+
+
 const mapStateToProps = ({ carers, router }: ApplicationState) => ({
   loading: carers.loading,
   errors: carers.errors,
   data: carers.data,
-  id: router.location.pathname
 });
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AnyAction>) => {
