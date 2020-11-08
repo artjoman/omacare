@@ -22,6 +22,8 @@ const stylesNeutral = {
   fontStyle: "normal",
   lineHeight: "0.8",
   letterSpacing: "normal",
+  marginTop: "10px",
+  marginBottom: "10px",
 }
 
 const stylesSelected = {
@@ -38,6 +40,8 @@ const stylesSelected = {
   fontStyle: "normal",
   lineHeight: "0.8",
   letterSpacing: "0.25px",
+  marginTop: "10px",
+  marginBottom: "10px",
 }
 
 const ChipLabel: React.FC<Props> = ({ labelText, clickHandler, chipSelected }) => {

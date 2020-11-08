@@ -1,6 +1,7 @@
+import { isAbsolute } from "path";
 import React from "react";
 import leftArrow from './arrow_left.svg';
-import BackButton from "./BackButton";
+import SecondaryButton from './SecondaryButton';
 
 interface Props {
   backButtonHandler: () => void;
@@ -11,11 +12,12 @@ interface Props {
 export const FormHeader: React.FC<Props> = ({ backButtonHandler, headerText, subHeader }) => {
   const headerStyle = {}
   const subHeaderStyle = {}
+
   return (
     <>
-      <BackButton clickHandler={backButtonHandler}></BackButton>
-      <div style={headerStyle}>{headerText}</div>
-      <div style={subHeaderStyle}>{subHeader}</div>
+      <SecondaryButton clickHandler={backButtonHandler} labelText={'Back'} buttonEnabled={true} />
+      <div className="formHeader" style={headerStyle}><h5>{headerText}</h5></div>
+      <div className="formSubHeader" style={subHeaderStyle}>{subHeader}</div>
     </>
   );
 }

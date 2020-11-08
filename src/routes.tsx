@@ -5,6 +5,7 @@ import RequestList from "./components/requestList";
 import Splash from "./components/splash";
 import Choice from "./components/choice";
 import ChoiceReceive from "./components/choiceNeedHelp";
+import RequestForm from "./components/RequestForm";
 
 const Routes: React.FC = () => (
   <div>
@@ -59,7 +60,7 @@ const Routes: React.FC = () => (
       <Route
         exact path="/receive/new"
         render={() => (
-            <ChoiceReceive />
+            <RequestForm />
         )}
       />
       <Route

@@ -9,7 +9,7 @@ export const RequestAge: React.FC<Props> = ({ clickHandler }) => {
   
   return (
     <>
-      <RequestFormHeader clickHandler={clickHandler} headerText="Select age" subHeader="SELECT ONE ITEM"></RequestFormHeader>
+      <RequestFormHeader backButtonHandler={clickHandler} headerText="Select age" subHeader="SELECT ONE ITEM"></RequestFormHeader>
     </>
   );
 }
