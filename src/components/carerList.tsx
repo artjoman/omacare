@@ -7,6 +7,8 @@ import Carer from "../models/Carers";
 import { fetchRequest } from "../store/carers/action";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
+import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -30,6 +32,10 @@ const CarerListing = styled.div`
   flex-wrap: wrap;
 `;
 
+interface ParamTypes {
+  id: string
+}
+
 interface PropsFromState {
   loading: boolean;
   data: Carer[];
@@ -38,6 +44,10 @@ interface PropsFromState {
 
 interface propsFromDispatch {
   fetchRequest: () => any;
+}
+
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
 }
 
 type AllProps = PropsFromState & propsFromDispatch;
@@ -52,9 +62,14 @@ const CarerList: React.FC<AllProps> = ({
     fetchRequest();
   }, []);
 
+  const query = useQuery();
+  const { id } = useParams<ParamTypes>();
   return (
     <Container>
       <Header>Care providers</Header>
+      <div> Current query id# {id}</div>
+      <div> Current query name {query.get('name')}</div>
+
       <CarerListing>
         {data.map(item => {
           return <CarerCard carer={item} />;
@@ -64,10 +79,11 @@ const CarerList: React.FC<AllProps> = ({
   );
 };
 
-const mapStateToProps = ({ carers }: ApplicationState) => ({
+const mapStateToProps = ({ carers, router }: ApplicationState) => ({
   loading: carers.loading,
   errors: carers.errors,
-  data: carers.data
+  data: carers.data,
+  id: router.location.pathname
 });
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, AnyAction>) => {
