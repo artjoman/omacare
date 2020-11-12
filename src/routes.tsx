@@ -5,6 +5,7 @@ import RequestList from "./components/requestList";
 import Splash from "./components/splash";
 import Choice from "./components/choice";
 import ChoiceReceive from "./components/choiceNeedHelp";
+import OmaDetails from "./components/carerDetails";
 
 const Routes: React.FC = () => (
   <div>
@@ -17,7 +18,7 @@ const Routes: React.FC = () => (
       <Route
         exact path="/carers/:id"
         render={() => (
-            <Carer />
+            <OmaDetails />
         )}
       />
       <Route

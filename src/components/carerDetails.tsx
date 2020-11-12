@@ -46,12 +46,16 @@ interface PropsFromState {
   }
   
   interface propsFromDispatch {
-    fetchOma: () => any;
+    fetchOma: (omaId: string) => Carer;
   }
   
+  type QueryParams = {
+    omaId: string;
+  }
+
   type AllProps = PropsFromState & propsFromDispatch;
 
-  const OmaDetails: React.FC<AllProps> = ({
+  const OmaDetails: React.FC<AllProps> = ({ match }) => ({
     loading,
     errors,
     data,
