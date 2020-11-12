@@ -62,12 +62,12 @@ interface PropsFromState {
     }, []);
   
     return (
-            <CarerContainer>
-                <CarerFigure>
-                    <CarerImage src={data.image} />
-                </CarerFigure>
-                <CarerHeader>{data.title}</CarerHeader>
-            </CarerContainer>
+      <CarerContainer>
+          <CarerFigure>
+              <CarerImage src={data.image} />
+          </CarerFigure>
+          <CarerHeader>{data.title}</CarerHeader>
+      </CarerContainer>
     );
 };
 
