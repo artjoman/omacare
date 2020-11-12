@@ -64,6 +64,7 @@ const CheckboxCard: React.FC<Props> = ({ checkboxName, checkboxValue, labelText,
     const handleChange = (event: any) => {
         state.value= !state.value;
         setState({ ...state, [event.target.name]: event.target.checked });
+        clickHandler();
     };
 
     return (

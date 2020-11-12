@@ -5,6 +5,7 @@ import RequestList from "./components/requestList";
 import Splash from "./components/splash";
 import Choice from "./components/choice";
 import ChoiceReceive from "./components/choiceNeedHelp";
+import RequestForm from "./components/RequestForm";
 import OmaDetails from "./components/carerDetails";
 
 const Routes: React.FC = () => (
@@ -13,12 +14,6 @@ const Routes: React.FC = () => (
       <Route exact path="/"
         render={() => (
             <Choice />
-        )}
-      />
-      <Route
-        exact path="/carers/:id"
-        render={() => (
-            <OmaDetails />
         )}
       />
       <Route
@@ -60,7 +55,7 @@ const Routes: React.FC = () => (
       <Route
         exact path="/receive/new"
         render={() => (
-            <ChoiceReceive />
+            <RequestForm />
         )}
       />
       <Route

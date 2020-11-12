@@ -1,1 +1,1 @@
-export type Gender = 'Male' | 'Female' | 'Non-binary' | undefined;
+export type Gender = 'Male' | 'Female' | 'Non-binary';

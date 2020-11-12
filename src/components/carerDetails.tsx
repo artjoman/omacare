@@ -5,6 +5,7 @@ import Carer from "../models/Carers";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
 import { Link, RouteComponentProps } from "react-router-dom";
+import { fetchRequest } from "../store/carers/action";
 
 const CarerContainer = styled.div`
   background-color: #eeeeee;
@@ -55,14 +56,14 @@ interface PropsFromState {
 
   type AllProps = PropsFromState & propsFromDispatch;
 
-  const OmaDetails: React.FC<AllProps> = ({ match }) => ({
+  const OmaDetails: React.FC<AllProps> = ({
     loading,
     errors,
     data,
     fetchOma
   }) => {
     useEffect(() => {
-        fetchOma();
+        fetchRequest();
     }, []);
   
     return (
